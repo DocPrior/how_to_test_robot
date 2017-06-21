@@ -7,9 +7,9 @@ class TestRobot < MiniTest::Test
   def test_that_foreign_vintage_robot_needing_repairs_sent_to_station_1
     # arrange
     robot = Robot.new
-        robot.needs_repairs = 1
-        robot.foreign_model = 1
-        robot.vintage_model = 1
+    robot.needs_repairs = 1
+    robot.foreign_model = 1
+    robot.vintage_model = 1
     # act
     sent_to_1 = robot.station
     # assert
@@ -17,12 +17,14 @@ class TestRobot < MiniTest::Test
   end
 
   def test_that_foreign_robot_neeing_repairs_sent_to_station_1
-    skip
     # arrange
-
+    robot = Robot.new
+    robot.needs_repairs = 1
+    robot.foreign_model = 1
     # act
-
+    sent_to_1 = robot.station
     # assert
+    assert_equal(sent_to_1, 1)
   end
 
   def test_that_vintage_robot_needing_repairs_sent_to_station_2
